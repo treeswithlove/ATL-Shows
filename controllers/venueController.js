@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Schema = require('../db/schema.js');
 const VenueModel = Schema.VenueModel;
+
 //index
 router.get('/venues', (req,res) => {
     VenueModel.find({})
@@ -9,10 +10,11 @@ router.get('/venues', (req,res) => {
             res.render('venues/venues', {
                 venues
             }).catch((error) => {
-                console.log(`error ${error}`)
+                // console.log(error)
             })
         });
 });
+
 
 module.exports = router;
 

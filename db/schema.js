@@ -32,6 +32,7 @@ const VenueSchema = new Schema({
     events: [EventSchema]
 })
 
+
 //create models for each Schema
 
 const VenueModel = mongoose.model('Venue', VenueSchema);
@@ -40,7 +41,7 @@ const EventModel = mongoose.model('Event', EventSchema);
 
 //removes venues
 VenueModel.remove({}, function (err) {
-    console.log(err);
+   // console.log(err);
 });
 
 
