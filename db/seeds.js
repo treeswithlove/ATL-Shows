@@ -20,13 +20,15 @@ const EventModel = Schema.EventModel;
 
 //create a theatre for the Venue Model
 const allainceTheatre = new VenueModel({name: 'The Alliance Theater'});
-const coolTheatre = new VenueModel({name:'The Cool Venue'})
+const allainceTheatres = new VenueModel({name: 'The Alliance Theaters'});
+
+
 //create an event for the Event Model
 const pippinMusical = new EventModel({name:'Pippin Musical', address:'1280 Peachtree St NE, Atlanta, GA 30309',cost:100, date: Date.now()})
 
 
 //assign events to venues
-const venues = [allainceTheatre, coolTheatre];
+const venues = [allainceTheatre,allainceTheatres];
 const events = [pippinMusical];
 
 
