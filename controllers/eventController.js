@@ -4,13 +4,19 @@ const Schema = require('../db/schema.js');
 const VenueModel = Schema.VenueModel;
 const EventModel = Schema.EventModel;
 
+//new
 router.get('/events', (req,res) => {
-    EventModel.find({})
-        .then((event) => {
+    //get the event id 
+    const venueId = req.params.id;
+    VenueModel.findById(venueId)
+        .then((venue) => {
             res.render('events/event', {
-                event
-            }).catch((error) => {
-                //console.log(error)
+                venue
             })
+        }).catch((error) => {
+            console.log(error);
         });
+
+  
 });
+
