@@ -19,6 +19,27 @@ router.get('/new', (req,res) => {
     res.render('venues/new')
 });
 
+//post route
+router.post('/', (req,res) => {
+    const newVenue = req.body;
+    //create and save newVenue
+    VenueModel.create(newVenue)
+    //Then once save 
+    .then(()=> {
+    //redirect to venue page
+        res.redirect('/venues')
+    }).catch((error) => {
+        console.log('error:' + error);
+    });
+});
+
+
+//edit route
+router.get('/:id/edit', (req,res) => {
+    
+});
+
+
 module.exports = router;
 
 
