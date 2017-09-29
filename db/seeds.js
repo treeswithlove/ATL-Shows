@@ -25,11 +25,13 @@ const allainceTheatres = new VenueModel({name: 'The Alliance Theaters', address:
 
 //create an event for the Event Model
 const pippinMusical = new EventModel({category:'play',name:'Pippin Musical', address:'1280 Peachtree St NE, Atlanta, GA 30309',cost:100, date: Date.now()})
+const evitaMusical = new EventModel({category:'play',name:'Evita Musical', address:'300 North Peachtree St NE, Atlanta, GA 30309',cost:200, date: Date.now()})
+
 
 
 //assign events to venues
 const venues = [allainceTheatre,allainceTheatres];
-const events = [pippinMusical];
+const events = [pippinMusical, evitaMusical];
 
 
 venues.forEach((venue) => {
