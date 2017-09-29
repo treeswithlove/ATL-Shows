@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 //Schema for Events will be created
-const PlaysSchema = new Schema({
+const EventSchema = new Schema({
     name: {
         type: String,
         required: true
@@ -40,12 +40,7 @@ const VenueSchema = new Schema({
 //create models for each Schema
 
 const VenueModel = mongoose.model('Venue', VenueSchema);
-
-//Events Model
-const PlaysModel = mongoose.model('Plays', PlaysSchema);
-//const ArtModel = mongoose.model('Art', ArtSchema);
-
-
+const EventModel = mongoose.model('Event', EventSchema);
 
 
 //removes venues
@@ -57,7 +52,7 @@ VenueModel.remove({}, function (err) {
 
 module.exports = {
     VenueModel : VenueModel,
-    PlaysModel : PlaysModel
+    EventModel : EventModel
 }
 
 
