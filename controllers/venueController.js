@@ -37,9 +37,9 @@ router.post('/', (req,res) => {
 
 
 //show route
-router.get('/:venue_id', (req,res) => {
-    const venue_id = req.params.venue_id;
-    VenueModel.findById(venue_id)
+router.get('/:venueId', (req,res) => {
+    const venueId = req.params.venueId;
+    VenueModel.findById(venueId)
         .then((venue) => {
             console.log(venue)
             res.render('venues/show',{
@@ -50,6 +50,33 @@ router.get('/:venue_id', (req,res) => {
     });
 });
 
+//edit route
+router.get('/:venueId/edit', (req,res) => {
+    const venueId = req.params.venueId;
+    VenueModel.findById(venueId)
+        .then((venue) => {
+            console.log(venue)
+            res.render('venues/edit',{
+                venue : venue
+        }).catch((error) => {
+            console.log(error)
+        })
+    });
+});
+
+//update route
+router.put('/:venueId', (req,res) => {
+    const venueId = req.params.venueId;
+    const updatedVenue = req.body;
+
+    VenueModel.findByIdAndUpdate(venueId, updatedVenue, { new: true })
+    .then(() => { res.redirect(`/venues/${venueId}`).catch((error) => {
+        console.log(error)
+    });
+});
+
+
+//delete route
 
 module.exports = router;
 
