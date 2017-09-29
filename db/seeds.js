@@ -19,8 +19,8 @@ const VenueModel = Schema.VenueModel;
 const EventModel = Schema.EventModel;
 
 //create a theatre for the Venue Model
-const allainceTheatre = new VenueModel({name: 'The Alliance Theater'});
-const allainceTheatres = new VenueModel({name: 'The Alliance Theaters'});
+const allainceTheatre = new VenueModel({name: 'The Alliance Theater', address: '100 Peachtree street'});
+const allainceTheatres = new VenueModel({name: 'The Alliance Theaters', address:'200 convingtion avenue'});
 
 
 //create an event for the Event Model

@@ -12,6 +12,7 @@ const app = express();
 const mongoose = require('mongoose');
 const venueController = require('./controllers/venueController.js');
 const homeController = require('./controllers/homeController.js');
+const methodOverride = require('method-override');
 
 
 mongoose.connect(process.env.MONGODB_URI); 
@@ -28,6 +29,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(methodOverride('_method'));
 
 app.use('/users', users);
 //controllers
