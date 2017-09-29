@@ -4,10 +4,10 @@ const Schema = require('../db/schema.js');
 const VenueModel = Schema.VenueModel;
 const EventModel = Schema.EventModel;
 
-//new
+//index
 router.get('/events', (req,res) => {
-    //get the event id 
     const venueId = req.params.id;
+    const eventId = req.params.id;
     VenueModel.findById(venueId)
         .then((venue) => {
             res.render('events/event', {
