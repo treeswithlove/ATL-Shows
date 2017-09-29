@@ -39,10 +39,10 @@ const VenueModel = mongoose.model('Venue', VenueSchema);
 const EventModel = mongoose.model('Event', EventSchema);
 
 
-//removes venues
-VenueModel.remove({}, function (err) {
-   console.log(err);
-});
+// //removes venues
+// VenueModel.remove({}, function (err) {
+//    console.log(err);
+// });
 
 
 

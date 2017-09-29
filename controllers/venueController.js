@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const Schema = require('../db/schema.js');
 const VenueModel = Schema.VenueModel;
+const EventModel = Schema.EventModel;
+
 //index
 router.get('/', (req,res) => {
     VenueModel.find({})
@@ -34,9 +36,22 @@ router.post('/', (req,res) => {
 });
 
 
-//edit route
-router.get('/:id/edit', (req,res) => {
+//show route
+router.get('/:event_id', (req,res) => {
+    const venue_id = req.params.id;
+    const event_id = req.params.id; 
     
+    VenueModel.find(venue_id)
+        .then((venues) => {
+            const event = venues.event.id(event_id)
+            res.render('events/show',{
+                venue_id,
+                event_id
+        }).catch((error) => {
+            console.log(error)
+        })
+});
+
 });
 
 
