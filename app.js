@@ -12,6 +12,7 @@ const app = express();
 const mongoose = require('mongoose');
 const venueController = require('./controllers/venueController.js');
 const homeController = require('./controllers/homeController.js');
+const eventController = require('./controllers/eventController.js');
 const methodOverride = require('method-override');
 
 
@@ -34,6 +35,7 @@ app.use(methodOverride('_method'));
 app.use('/users', users);
 //controllers
 app.use('/venues', venueController);
+app.use('/events', eventController);
 app.use('/', homeController );
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

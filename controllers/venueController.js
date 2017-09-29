@@ -4,7 +4,7 @@ const Schema = require('../db/schema.js');
 const VenueModel = Schema.VenueModel;
 const EventModel = Schema.EventModel;
 
-//index
+//index route
 router.get('/', (req,res) => {
     VenueModel.find({})
         .then((venues) => {

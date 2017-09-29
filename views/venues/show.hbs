@@ -1,13 +1,14 @@
 <div>{{venue.name}}</div>
-
 <div><a href="/venues/{{venue._id}}/edit">Edit Venue</a></div>
 <div> <a href="/venues/{{venue._id}}/delete">Delete Venue</a></div>
-
+<hr />
 
 <ul>
     {{#each venue.events}}
-        <div><a href="">{{this.title}}</a> This will go to the edit hbs when click
+        <div>{{this.title}}</div>This will go to the edit hbs when click
+        <hr />
         <div><a href="/venues/{{../venue._id}}/events/{{this._id}}/edit">Edit Event</a></div>
         <div><a href="/venues/{{../venue.id}}/events/{{this._id}}/delete">Delete Event</a></div>
+        <div><a href="/events/new">Add New Event</a></div>
     {{/each}}
 </ul>
