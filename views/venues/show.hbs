@@ -1,5 +1,11 @@
-    <div>{{venue.name}}</div>
+<div>{{venue.name}}</div>
 
-    <div><a href="/venues/{{venue._id}}/edit">Edit Venue</a></div>
-    <div> <a href="/venues/{{venue._id}}/delete">Delete Venue</a></div>
-    
+<div><a href="/venues/{{venue._id}}/edit">Edit Venue</a></div>
+<div> <a href="/venues/{{venue._id}}/delete">Delete Venue</a></div>
+
+
+<ul>
+    {{#each venue.events}}
+        <div>{{this.name}}</div>
+    {{/each}}
+</ul>
