@@ -76,7 +76,16 @@ router.put('/:venueId', (req,res) => {
 });
 
 
+
 //delete route
+router.get('/:venueId/delete', (req,res) => {
+    const venueId = req.params.venueId;
+
+    VenueModel.findByIdAndRemove(venueId)
+        .then(() =>{ res.redirect('/venues')}).catch((error) => {
+            console.log(error)
+        });
+}); 
 
 module.exports = router;
 
