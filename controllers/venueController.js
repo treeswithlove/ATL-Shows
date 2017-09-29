@@ -8,7 +8,7 @@ const EventModel = Schema.EventModel;
 router.get('/', (req,res) => {
     VenueModel.find({})
         .then((venues) => {
-            res.render('venues/venue', {
+            res.render('venues/index', {
                 venues
             }).catch((error)=> {
                 console.log(error)
@@ -37,21 +37,17 @@ router.post('/', (req,res) => {
 
 
 //show route
-router.get('/:event_id', (req,res) => {
-    const venue_id = req.params.id;
-    const event_id = req.params.id; 
-    
-    VenueModel.find(venue_id)
-        .then((venues) => {
-            const event = venues.event.id(event_id)
-            res.render('events/show',{
-                venue_id,
-                event_id
+router.get('/:venue_id', (req,res) => {
+    const venue_id = req.params.venue_id;
+    VenueModel.findById(venue_id)
+        .then((venue) => {
+            console.log(venue)
+            res.render('venues/show',{
+                venue : venue
         }).catch((error) => {
             console.log(error)
         })
-});
-
+    });
 });
 
 
