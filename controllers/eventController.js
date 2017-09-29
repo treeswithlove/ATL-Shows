@@ -4,7 +4,7 @@ const Schema = require('../db/schema.js');
 const VenueModel = Schema.VenueModel;
 const EventModel = Schema.EventModel;
 
-//indx
+//shows all the events
 router.get('/:venueId', (req,res) => {
     const venueId = req.params.venueId;
     VenueModel.findById(venueId)
@@ -16,5 +16,8 @@ router.get('/:venueId', (req,res) => {
         });
     });
 });
+
+//edit the events
+
 
 
