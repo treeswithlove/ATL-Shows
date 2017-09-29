@@ -1,5 +1,5 @@
 const express = require('express');
-const router = express.Router();
+const router = express.Router({mergeParams: true});
 const Schema = require('../db/schema.js');
 const VenueModel = Schema.VenueModel;
 const EventModel = Schema.EventModel;
@@ -26,26 +26,32 @@ router.get('/new', (req,res) => {
 });
 
 router.post('/', (req,res) => {
+    const venueId = req.params.venueId;
     const newEvent = req.body;
-    EventModel.create(newEvent)
-    .then(()=> {
-        res.redirect('events/')
+    VenueModel.findById(venueId)
+    .then((venue)=> {
+        venue.events.push(newEvent)
+            return venue.save()
+    .then((venue)=> {
+        res.redirect(`/venues/${venueId}`)
     }).catch((error) => {
         console.log('error:' + error);
+    });
     });
 });
 
 
 //delete event
-// router.get('/:eventId/delete', (req,res) => {
-//     const venueId = req.params.venueId;
-//     const eventId = req.params.eventId;
-//     VenueModel.findByIdAndRemove(venueId)
-//     const event = venue.event.id(eventId).remove()
-//         return venue.save()
-//         .then(() =>{ 
-//             res.redirect(`/venues/${venueId}/events`)
-//         });
-// }); 
+router.get('/:eventId/delete', (req,res) => {
+    const venueId = req.params.venueId;
+    const eventId = req.params.eventId;
+
+    VenueModel.findById(venueId)
+        .then((venue) => {
+
+        });
+
+
+}); 
 
 module.exports = router;

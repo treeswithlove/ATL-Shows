@@ -14,9 +14,18 @@ db.on('error', ((err) =>{console.log(err);
 })).once('open',(() => {console.log("Connected to MongoDB!");
     }));
 
+
+
 //Sets schema model to variables    
 const VenueModel = Schema.VenueModel;
 const EventModel = Schema.EventModel;
+
+ 
+//removes venues
+VenueModel.remove({}, function (err) {
+    console.log(err);
+ });   
+
 
 //create a theatre for the Venue Model
 const allainceTheatre = new VenueModel({name: 'The Alliance Theater', address: '100 Peachtree street'});

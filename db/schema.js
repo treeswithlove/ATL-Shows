@@ -5,8 +5,7 @@ const Schema = mongoose.Schema;
 //Schema for Events will be created
 const EventSchema = new Schema({
     category:{
-            type: String,
-            required:true
+            type: String
         },
     title: {
         type: String,
@@ -18,13 +17,11 @@ const EventSchema = new Schema({
         required: true
     },
     cost:{
-        type:Number,
-        required: true
+        type:Number
     },
     date:{
         type:Date,
-        default:Date.now,
-        required: true
+        default:Date.now
     }
 })
 
@@ -48,10 +45,6 @@ const VenueModel = mongoose.model('Venue', VenueSchema);
 const EventModel = mongoose.model('Event', EventSchema);
 
 
-//removes venues
-VenueModel.remove({}, function (err) {
-   console.log(err);
-});
 
 
 
