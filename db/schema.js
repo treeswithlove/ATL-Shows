@@ -29,6 +29,10 @@ const VenueSchema = new Schema({
         type: String,
         required: true
     },
+    address:{
+        type:String,
+        required: true
+    },
     events: [EventSchema]
 })
 

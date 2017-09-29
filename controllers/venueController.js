@@ -65,27 +65,25 @@ router.get('/:venueId/edit', (req,res) => {
 });
 
 //update route
-router.put('/:venueId', (req,res) => {
-    const venueId = req.params.venueId;
-    const updatedVenue = req.body;
+// router.put('/:venueId', (req,res) => {
+//     const venueId = req.params.venueId;
+//     const updatedVenue = req.body;
+//     VenueModel.findByIdAndUpdate(venueId, updatedVenue, { new: true })
+//     .then(() => { res.redirect(`/venues/${venueId}`).catch((error) => {
+//         console.log(error)
+//     });
+//     });
+// });
 
-    VenueModel.findByIdAndUpdate(venueId, updatedVenue, { new: true })
-    .then(() => { res.redirect(`/venues/${venueId}`).catch((error) => {
-        console.log(error)
-    });
-});
 
-
-
-//delete route
-router.get('/:venueId/delete', (req,res) => {
-    const venueId = req.params.venueId;
-
-    VenueModel.findByIdAndRemove(venueId)
-        .then(() =>{ res.redirect('/venues')}).catch((error) => {
-            console.log(error)
-        });
-}); 
+// //delete route
+// router.get('/:venueId/delete', (req,res) => {
+//     const venueId = req.params.venueId;
+//     VenueModel.findByIdAndRemove(venueId)
+//         .then(() =>{ res.redirect('/venues')}).catch((error) => {
+//             console.log(error)
+//         });
+// }); 
 
 module.exports = router;
 
