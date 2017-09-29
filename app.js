@@ -35,7 +35,7 @@ app.use(methodOverride('_method'));
 app.use('/users', users);
 //controllers
 app.use('/venues', venueController);
-app.use('/events', eventController);
+app.use('/venues/:venueId/events', eventController);
 app.use('/', homeController );
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

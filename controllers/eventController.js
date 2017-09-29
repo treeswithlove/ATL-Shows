@@ -5,7 +5,7 @@ const VenueModel = Schema.VenueModel;
 const EventModel = Schema.EventModel;
 
 //shows all the events
-router.get('/:venueId', (req,res) => {
+router.get('/', (req,res) => {
     const venueId = req.params.venueId;
     VenueModel.findById(venueId)
         .then((venue) => {
@@ -17,14 +17,23 @@ router.get('/:venueId', (req,res) => {
     });
 });
 
-//new route for a single play
+// //new route for a single play
 router.get('/new', (req,res) => {
-    res.render('events/new')
+    const venueId = req.params.venueId;
+    res.render('events/new', {
+        venueId
+    })
 });
 
-
-
-
+router.post('/', (req,res) => {
+    const newEvent = req.body;
+    EventModel.create(newEvent)
+    .then(()=> {
+        res.redirect('events/')
+    }).catch((error) => {
+        console.log('error:' + error);
+    });
+});
 
 
 //delete event
