@@ -17,7 +17,26 @@ router.get('/:venueId', (req,res) => {
     });
 });
 
-//edit the events
+//new route for a single play
+router.get('/new', (req,res) => {
+    res.render('events/new')
+});
 
+
+
+
+
+
+//delete event
+// router.get('/:eventId/delete', (req,res) => {
+//     const venueId = req.params.venueId;
+//     const eventId = req.params.eventId;
+//     VenueModel.findByIdAndRemove(venueId)
+//     const event = venue.event.id(eventId).remove()
+//         return venue.save()
+//         .then(() =>{ 
+//             res.redirect(`/venues/${venueId}/events`)
+//         });
+// }); 
 
 

@@ -1,9 +1,10 @@
+ There will be a list of venues listed here
+<div><a href="">Add Venue</a></div>
 <div>
-    {{#each venues}}
-    <a href="/venues/{{this._id}}">{{this.name}}</a>
-    {{/each}}
+    <ul>
+        {{#each venues}}
+       <li><a href="/venues/{{this._id}}">{{this.name}}</a></li> 
+        {{/each}}
+    </ul>
+
 </div>
-
-
-this is the index venue page
-
