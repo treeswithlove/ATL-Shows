@@ -4,10 +4,15 @@ const Schema = mongoose.Schema;
 
 //Schema for Events will be created
 const EventSchema = new Schema({
+    category:{
+            type: String,
+            required:true
+        },
     name: {
         type: String,
         required: true
     },
+   
     address:{
         type: String,
         required: true
