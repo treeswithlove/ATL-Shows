@@ -24,7 +24,7 @@ router.get('/new', (req,res) => {
         venueId
     })
 });
-
+//post event
 router.post('/', (req,res) => {
     const venueId = req.params.venueId;
     const newEvent = req.body;
@@ -36,10 +36,41 @@ router.post('/', (req,res) => {
         res.redirect(`/venues/${venueId}`)
     }).catch((error) => {
         console.log('error:' + error);
-    });
+         });
     });
 });
 
+//show route
+router.get('/:eventId', (req,res) => {
+    const venueId = req.params.venueId;
+    VenueModel.findById(venueId)
+        .then((venue) => {
+            console.log(venue)
+            res.render('venues/show',{
+                venue : venue
+        }).catch((error) => {
+            console.log(error)
+        })
+    });
+});
+
+//edit route
+router.get('/:eventId/edit', (req,res) => {
+    const venueId = req.params.venueId;
+    VenueModel.findById(venueId)
+        .then((venue) => {
+            console.log(venue)
+            res.render('events/edit',{
+                venue : venue
+        }).catch((error) => {
+            console.log(error)
+        })
+    });
+});
+
+
+
+//update route
 
 //delete event
 router.get('/:eventId/delete', (req,res) => {
@@ -48,8 +79,12 @@ router.get('/:eventId/delete', (req,res) => {
 
     VenueModel.findById(venueId)
         .then((venue) => {
-
-        });
+                const event = venue.events.id(eventId).remove()
+                return venue.save()
+        })
+        .then(() => {
+            res.redirect(`/venues/${venueId}`)
+        })
 
 
 }); 
