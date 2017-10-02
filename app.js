@@ -6,10 +6,9 @@ const favicon = require('serve-favicon');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
-const index = require('./routes/index');
-const users = require('./routes/users');
 const app = express();
 const mongoose = require('mongoose');
+const userController = require('./controllers/userController.js');
 const venueController = require('./controllers/venueController.js');
 const homeController = require('./controllers/homeController.js');
 const eventController = require('./controllers/eventController.js');
@@ -32,8 +31,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
 
-app.use('/users', users);
 //controllers
+app.use('/users', userController);
 app.use('/venues', venueController);
 app.use('/venues/:venueId/events', eventController);
 app.use('/', homeController );
