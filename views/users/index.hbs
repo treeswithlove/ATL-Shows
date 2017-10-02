@@ -1,12 +1,16 @@
-<form action="/venues">
-    <div class="imgcontainer">
-        <div class="container">
-            <label><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="username" required>
-
-            <label><b>Email</b></label>
-            <input type="email" placeholder="Enter Email Address" name="email" required>
-
-            <a href="/venues" type="submit" value="Login">Login</a>
-        </div>
-    </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel='stylesheet' href='/stylesheets/signin.css' />
+</head>
+<div class="container">
+    <form action="/venues">
+            <label for="username">Username</label>
+            <input class="signin" type="email" placeholder="Enter username">
+            <label for="email">Email address</label>
+            <input class="signin" type="email" placeholder="Enter email">
+            <a class="login" href="/venues" type="submit">Login</a>
+    </form>
+</div>

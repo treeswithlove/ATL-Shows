@@ -65,7 +65,29 @@ body{
   }
 .edit, .delete, .add{
     display: flex;
-    border:1px solid red;
+    border:3px solid gray;
+    margin: 17px;
+}
+
+a.edit:hover{
+    color:green;
+}
+a.delete:hover{
+    color:red;
+}
+
+a.edit, a.delete, a.add{
+    padding: 7px;
+}
+a.add:hover{
+    color:orange;
+}
+.event-title{
+    margin-left: 18px;
+}
+
+.event-title:hover{
+    font-size: 20px;
 }
 
 .venue-name{
@@ -77,5 +99,16 @@ body{
     margin-left: 12em;
     font-size: 31px;
     margin-top: 15px;
+}
+
+.editVenue{
+    position: relative;
+    bottom: 2em;
+}
+
+.deleteVenue{
+    position: relative;
+    left: 7em;
+    bottom: 3.7em;
 }
 

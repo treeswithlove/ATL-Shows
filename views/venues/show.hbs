@@ -1,17 +1,23 @@
 <div>
     <div class="venue-name">Listings for the {{venue.name}}</div>
-    <div class="editVenue"><a href="/venues/{{venue._id}}/edit">Edit Venue</a></div>
-    <div class="deleteVenue"> <a href="/venues/{{venue._id}}/delete">Delete Venue</a></div>
+    <div>
+        <div class="editVenue"><a href="/venues/{{venue._id}}/edit">Edit Venue</a></div>
+    </div>
+    <div>
+        <div class="deleteVenue"> <a href="/venues/{{venue._id}}/delete">Delete Venue</a></div>
+    </div>
 </div>
 
 
 {{#each venue.events}}
 <div class="event-container">
-    <div class="event-title"><a  href="/venues/{{../venue._id}}/events/{{this._id}}">{{this.title}}</a><div>
-        <div class="edit"><a href="/venues/{{../venue._id}}/events/{{this._id}}/edit">Edit Event</a></div>
-        <div class="delete"><a href="/venues/{{../venue._id}}/events/{{this._id}}/delete">Delete Event</a></div>
-        <div class="add"><a href="/venues/{{../venue._id}}/events/new">Add New Event</a></div>
+    <div><a class="event-title" href="/venues/{{../venue._id}}/events/{{this._id}}">{{this.title}}</a>
+        <div>
+            <div><a class="edit" href="/venues/{{../venue._id}}/events/{{this._id}}/edit">Edit Event</a></div>
+            <div><a class="delete" href="/venues/{{../venue._id}}/events/{{this._id}}/delete">Delete Event</a></div>
+            <div><a class="add" href="/venues/{{../venue._id}}/events/new">Add New Event</a></div>
+        </div>
+        </a>
     </div>
-    </a></div>
 </div>
 {{/each}}
