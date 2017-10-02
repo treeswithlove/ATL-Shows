@@ -1,23 +1,63 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+html,body{
+  margin: 0;
+  padding: 0;
 }
 
-a {
-  color: #00B7FF;
+.columns{
+  display: inline-flex;
+  font-family: 'Permanent Marker', cursive;
+}
+#title{
+  font-size: 30px;
+  padding: 25px;
+  color:#f1c40f;
+  text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;
+}
+
+#title:hover{
+text-shadow: 3px 3px  #7f8c8d;
+cursor: pointer;
+}
+
+#nav{
+  word-spacing: 10px;
+  font-size: 23px;
+  margin-left:10px;
+  color:#f1c40f; 
+  margin-left: 35em;
+  margin-top: 1em;
+  flex-direction: row;
+  text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;
+}
+#local-title{
+  padding: 0;
+  margin: 0;
+}
+.num1:hover, .num2:hover, .num3:hover,.num4:hover,.num5:hover,.num6:hover,.num7:hover{
+  text-shadow: 5px 5px  #7f8c8d;
+  cursor: pointer;
 }
 
 video { 
+  max-width: none;
   position: fixed;
   top: 50%;
+  height: 100vh;
   left: 50%;
-  min-width: 100%;
-  min-height: 100%;
+  z-index: -100;
   width: auto;
   height: auto;
-  z-index: -100;
   transform: translateX(-50%) translateY(-50%);
-background: no-repeat;
-background-size: cover;
-transition: 1s opacity;
+}
+
+#headline{
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+   margin-top: 15em; 
+  margin-left: 10em;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 22px;
+  color:#f1c40f;
+  text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;
 }
