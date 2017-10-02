@@ -3,6 +3,9 @@
     <div>
         <div class="editVenue"><a href="/venues/{{venue._id}}/edit">Edit Venue</a></div>
     </div>
+      <div>
+        <div class="editShow"><a href="/venues/{{venueId}}">Show Venues</a></div>
+    </div>
     <div>
         <div class="deleteVenue"> <a href="/venues/{{venue._id}}/delete">Delete Venue</a></div>
     </div>
@@ -12,6 +15,7 @@
 {{#each venue.events}}
 <div class="event-container">
     <div><a class="event-title" href="/venues/{{../venue._id}}/events/{{this._id}}">{{this.title}}</a>
+        <a class="event-title" href="/venues/{{../venue._id}}/events/{{this._id}}">{{this.date}}</a>
         <div>
             <div><a class="edit" href="/venues/{{../venue._id}}/events/{{this._id}}/edit">Edit Event</a></div>
             <div><a class="delete" href="/venues/{{../venue._id}}/events/{{this._id}}/delete">Delete Event</a></div>
