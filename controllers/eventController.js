@@ -43,11 +43,13 @@ router.post('/', (req,res) => {
 //show route
 router.get('/:eventId', (req,res) => {
     const venueId = req.params.venueId;
+    const eventId = req.params.eventId;
     VenueModel.findById(venueId)
         .then((venue) => {
             console.log(venue)
             res.render('venues/show',{
-                venue : venue
+                venue : venue,
+                event: event
         }).catch((error) => {
             console.log(error)
         })
@@ -61,8 +63,6 @@ router.get('/:eventId/edit', (req,res) => {
     VenueModel.findById(venueId)
         .then((venue) => {
         const event = venue.events.id(eventId)
-        
-            console.log(venue)
             res.render('events/edit',{
                 event,
                 venueId
@@ -82,17 +82,20 @@ router.put('/:eventId', (req,res) => {
     VenueModel.findById(venueId)
     .then((venue) => { 
         const event = venue.events.id(eventId)
+        console.log(event.title)
         
         event.title = updatedEvent.title;
         event.address = updatedEvent.address;
         event.cost = updatedEvent.cost;
-            
-        res.redirect(`/venues/${venueId}/events/${eventId}`)
-            .catch((error) => {
-        console.log(error)
+
+        return venue.save()
+    })
+            .then(() => {
+                res.redirect(`/venues/${venueId}`)
+            }).catch((error) => {
+                 console.log(error)
+         });
     });
-    });
-});
 
 //delete event
 router.get('/:eventId/delete', (req,res) => {
