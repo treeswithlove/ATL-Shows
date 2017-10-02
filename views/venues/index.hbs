@@ -1,11 +1,23 @@
-This is the Main page 
+<!DOCTYPE html>
+<html>
 
- 
-<div><a href="">Add Venue</a></div>
-<div>
-    <ul>
-        {{#each venues}}
-        <li><a href="/venues/{{this._id}}">{{this.name}}</a></li>
-        {{/each}}
-    </ul>
-</div> 
+<head>
+    <title>{{title}}</title>
+    <link rel='stylesheet' href='/stylesheets/home.css' />
+    <link rel='stylesheet' href='/stylesheets/venue.css' />
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+</head>
+
+<body>
+    <div class="addVenue">Add Venue<a class="ion-ios-plus-outline" href="/venues/new"></a></div>
+    <div>
+        <ul>
+            {{#each venues}}
+                <div class="button-area">
+                    <a href="/venues/{{this._id}}">{{this.name}}
+                     <div id="venue-address">{{this.address}}</div></a> 
+                </div>
+            {{/each}}
+        </ul>
+    </div>
+</body>
