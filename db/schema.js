@@ -2,6 +2,15 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
+const UserSchema =  new Schema({
+    username:{
+        type:String
+    },
+    email:{
+        type:String
+    }
+})
+
 //Schema for Events will be created
 const EventSchema = new Schema({
     category:{
@@ -40,7 +49,7 @@ const VenueSchema = new Schema({
 
 
 //create models for each Schema
-
+const UserModel = mongoose.model('User', UserSchema);
 const VenueModel = mongoose.model('Venue', VenueSchema);
 const EventModel = mongoose.model('Event', EventSchema);
 
@@ -49,6 +58,7 @@ const EventModel = mongoose.model('Event', EventSchema);
 
 
 module.exports = {
+    UserModel : UserModel,
     VenueModel : VenueModel,
     EventModel : EventModel
 }
