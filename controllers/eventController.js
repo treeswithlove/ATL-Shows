@@ -9,7 +9,7 @@ router.get('/', (req,res) => {
     const venueId = req.params.venueId;
     VenueModel.findById(venueId)
         .then((venue) => {
-            res.render('venues/show', {
+            res.render('events/index', {
                 venue
         }).catch((error) => {
             console.log(error);
@@ -46,9 +46,10 @@ router.get('/:eventId', (req,res) => {
     const eventId = req.params.eventId;
     VenueModel.findById(venueId)
         .then((venue) => {
-            console.log(venue)
-            res.render('venues/show',{
-                venue : venue,
+        const event = venue.events.id(eventId)
+        
+            res.render('events/show',{
+                venueId : venueId,
                 event: event
         }).catch((error) => {
             console.log(error)

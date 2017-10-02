@@ -5,6 +5,7 @@
 <ul>
     {{#each venue.events}}
         <li>{{this.title}}</li>
+         <a href="/venues/{{../venue._id}}/events/{{this._id}}">View</a>
         <div><a href="/venues/{{../venue._id}}/events/{{this._id}}/edit">Edit Event</a></div>
         <div><a href="/venues/{{../venue._id}}/events/{{this._id}}/delete">Delete Event</a></div>
         <div><a href="/venues/{{../venue._id}}/events/new">Add New Event</a></div>
