@@ -1,11 +1,24 @@
 
 
-    <div><a href="">Add Venue</a></div>
+    {{!-- <div><a href="">Add Venue</a></div>
 <div>
     <ul>
         {{#each venues}}
        <li><a href="/venues/{{this._id}}">{{this.name}}</a></li> 
         {{/each}}
     </ul>
-</div>
+</div> --}}
+
+{{!-- <div class="homepage-hero-module">
+    <div class="video-container">
+        <div class="filter"></div>
+        <video class="fillWidth">
+            <source src="images/cheer.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+        </video>
+    </div>
+</div> --}}
     
+<video playsinline autoplay muted loop
+id="video"
+  src="images/cheer.mp4"
+/>
