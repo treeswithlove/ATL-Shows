@@ -11,6 +11,6 @@ Atlanta-Based Application For Local Events
 ## Trello: https://trello.com/b/pYPRXgQI/atl-showsfor-locals-by-locals
 ## Github: https://github.com/theatrekid09/ATL-Shows/tree/master
 
-![alt text](https://github.com/theatrekid09/Jeopardy_Game/blob/master/css/images/pic.png "Logo Title Text 1")
+![alt text](https://github.com/theatrekid09/ATL-Shows/blob/master/public/images/show.png "Logo Title Text 1")
 
 
