@@ -4,7 +4,7 @@
 Atlanta-Based Application For Local Events 
 
 ## Created By ATL Locals, For ATL Locals 
-### Bringing The Best Local Content To The Locals
+Bringing The Best Local Content To The Locals
 
 
 ## Link : https://desolate-stream-26159.herokuapp.com/
