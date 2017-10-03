@@ -70,9 +70,14 @@ router.get('/:eventId/edit', (req,res) => {
     VenueModel.findById(venueId)
         .then((venue) => {
         const event = venue.events.id(eventId)
+            console.log(event.date);
+            
+            const date = moment.utc(event.date).local().format('YYYY-MM-DD[T]hh:mm');
+            console.log(date)
             res.render('events/edit',{
                 event,
-                venueId
+                venueId,
+                date
         }).catch((error) => {
             console.log(error)
         })
