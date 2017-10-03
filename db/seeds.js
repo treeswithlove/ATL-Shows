@@ -28,18 +28,20 @@ VenueModel.remove({}, function (err) {
 
 
 //create a theatre for the Venue Model
-const allainceTheatre = new VenueModel({name: 'The Alliance Theater', address: '100 Peachtree street'});
-const allainceTheatres = new VenueModel({name: 'The Alliance Theaters', address:'200 convingtion avenue'});
+const allainceTheatre = new VenueModel({name: 'The Alliance Theater', address: '1280 Peachtree St NE, Atlanta, GA 30309'});
+const dadsGarage = new VenueModel({name: 'Dad\'s Garage', address:'569 Ezzard St SE, Atlanta, GA 30312'});
+const stagesTheatre = new VenueModel({name: '7 Stages Theatre', address:' 1105 Euclid Ave NE, Atlanta, GA 30307'});
+
 
 
 //create an event for the Event Model
 const pippinMusical = new EventModel({category:'play',title:'Pippin Musical', address:'1280 Peachtree St NE, Atlanta, GA 30309',cost:100, date: Date.now()})
-const evitaMusical = new EventModel({category:'play',title:'Evita Musical', address:'300 North Peachtree St NE, Atlanta, GA 30309', cost:200, date: Date.now()})
+const evitaMusical = new EventModel({category:'play',title:'Evita Musical', address:'1280 Peachtree St NE, Atlanta, GA 30309', cost:200, date: Date.now()})
 
 
 
 //assign events to venues
-const venues = [allainceTheatre,allainceTheatres];
+const venues = [allainceTheatre,dadsGarage,stagesTheatre];
 const events = [pippinMusical, evitaMusical];
 
 
