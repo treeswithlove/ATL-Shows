@@ -11,7 +11,7 @@ Bringing The Best Local Content To The Locals
 ## Trello: https://trello.com/b/pYPRXgQI/atl-showsfor-locals-by-locals
 ## Github: https://github.com/theatrekid09/ATL-Shows/tree/master
 ## ERD:https://github.com/theatrekid09/ATL-Shows/blob/master/public/images/erd.png
-## ERD:https://github.com/theatrekid09/ATL-Shows/blob/master/public/images/wireframe.png
+## Wireframe:https://github.com/theatrekid09/ATL-Shows/blob/master/public/images/wireframe.png
 
 
 
