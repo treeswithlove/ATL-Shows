@@ -177,12 +177,22 @@ body{
     color:#27ae60;
     cursor: pointer;
 }
-.deleteVenue a{
+
+.addNew a{
     font-family: 'Permanent Marker', cursive;
     margin:30px;
     font-size: 20px;
+    color:palegoldenrod;
+    cursor: pointer;
+}
+.deleteVenue a{
+    font-family: 'Permanent Marker', cursive;
+    font-size: 20px;
     color:#c0392b;
     cursor: pointer;
+    position: relative;
+    bottom: 30px;
+    left: 34px;
 }
 
 .editShow a{
@@ -247,6 +257,10 @@ a.add:hover{
     margin-left: 12em;
     font-size: 31px;
     margin-top: 15px;
+}
+#rightMenu{
+position: relative;
+bottom:4em;    
 }
 
 .editVenue{
