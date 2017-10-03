@@ -169,6 +169,17 @@ body{
     font-size: 25px;
   }
 
+  .backHome{
+        font-family: 'Permanent Marker', cursive;
+        margin:30px;
+        font-size: 20px;
+        color:#f1c40f;
+        font-size: 25px;
+        float: right;
+        position: relative;
+        bottom:4em;
+  }
+
 /*show one venue */
 .editVenue a{
     font-family: 'Permanent Marker', cursive;
