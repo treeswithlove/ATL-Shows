@@ -1,12 +1,12 @@
-<form id="editForm" action="/venues/{{venueId}}?_method=PUT" method="post">
+<form id="editForm" action="/venues/{{venueId}}/events/{{event._id}}?_method=PUT" method="post">
     <label>Play Title:</label>
-    <input type="text" name="cost" value="{{event.cost}}" />
+    <input type="text" name="title" value="{{event.title}}" />
       <label>Play Address:</label>
     <input type="text" name="address" value="{{event.address}}" />
       <label>Play Price:</label>
-    <input type="text" name="title" value="{{event.title}}" />
+    <input type="text" name="cost" value="{{event.cost}}" />
       <label>Play Date:</label>
-      <input type="text" name="title" value="{{event.date}}" />
-    <input type="submit" value="Update Play"/>
+     <input type="datetime-local" name="date" value="{{event.date}}">
+    <input type="submit" value="Update Play " />
 </form>
 

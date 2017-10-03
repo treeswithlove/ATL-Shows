@@ -13,6 +13,7 @@ const venueController = require('./controllers/venueController.js');
 const homeController = require('./controllers/homeController.js');
 const eventController = require('./controllers/eventController.js');
 const methodOverride = require('method-override');
+const moment = require('moment');
 
 
 mongoose.connect(process.env.MONGODB_URI); 

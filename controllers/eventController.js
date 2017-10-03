@@ -3,6 +3,8 @@ const router = express.Router({mergeParams: true});
 const Schema = require('../db/schema.js');
 const VenueModel = Schema.VenueModel;
 const EventModel = Schema.EventModel;
+const moment = require('moment');
+
 
 //shows all the events
 router.get('/', (req,res) => {
@@ -42,15 +44,19 @@ router.post('/', (req,res) => {
 
 //show route
 router.get('/:eventId', (req,res) => {
+    
     const venueId = req.params.venueId;
     const eventId = req.params.eventId;
     VenueModel.findById(venueId)
         .then((venue) => {
         const event = venue.events.id(eventId)
-        
+        const date = moment(event.date)
+        const dateComponent = moment.utc(date).local().format('MM/DD/YYYY, h:mm p');
             res.render('events/show',{
+                
                 venueId : venueId,
-                event: event
+                event: event,
+                dateComponent
         }).catch((error) => {
             console.log(error)
         })
@@ -83,12 +89,11 @@ router.put('/:eventId', (req,res) => {
     VenueModel.findById(venueId)
     .then((venue) => { 
         const event = venue.events.id(eventId)
-        console.log(event.title)
         
         event.title = updatedEvent.title;
         event.address = updatedEvent.address;
         event.cost = updatedEvent.cost;
-
+        event.date = updatedEvent.date;        
         return venue.save()
     })
             .then(() => {

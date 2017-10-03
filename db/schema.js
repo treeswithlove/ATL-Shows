@@ -31,7 +31,7 @@ const EventSchema = new Schema({
         type:Number
     },
     date:{
-        type:String
+        type:Date
     }
 })
 
